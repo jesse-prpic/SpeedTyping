@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(216, 170, 101);
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+
+}
+
+.sentence-display {
+    color: rgb(226, 25, 25);
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.results {
+    color: rgb(14, 9, 112);
+    margin-bottom: 20px;
+    font: bold;
+}
+
+.play-button {
+    background-color: goldenrod;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none
+}
+
+.play-button:hover {
+    background-color: white;
+}
