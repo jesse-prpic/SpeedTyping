@@ -10,7 +10,7 @@ const resultsSection = document.getElementById("resultsSections");
 
 async function getRandomSentence(wordCount){
     try {
-        const response = await fetch(`https://random-words-api.vercel.app/word=${wordCount}`);
+        const response = await fetch(`https://random-word-api.herokuapp.com/word?number=${wordCount}`);
         const data = await response.json();
         let sentence = data.join(' ');
         console.log(sentence);
@@ -19,8 +19,25 @@ async function getRandomSentence(wordCount){
         console.error("Failed to fetch sentence:", error);
         return "Error Loading sentence, please try again."
     }
+}
 
+async function displaySentence() {
+    // Fetch sentence with 10 words
+    const randomSentence = await getRandomSentence(10);
+    // Display the words in the HTML content
+    sentenceDisplay.textContent = randomSentence;
 }
 
 // Event Listeners
-playButton.addEventListener('click', getRandomSentence(10));
+playButton.addEventListener('click', startGame);
+
+// Start Game
+function startGame() {
+    inputField.value = '';
+    resultsSection.innerHTML = '';
+    displaySentence();
+
+    //Show necessary elements
+    inputField.style.display = 'block';
+    sentenceDisplay.style.display = 'block';
+}
